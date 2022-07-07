@@ -1,0 +1,43 @@
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+@mixin border-radius($top-left:10px, $top-right:null, $bottom-right:null, $bottom-left:null){
+    -webkit-border-radius: $top-left $top-right $bottom-right $bottom-left;
+       -moz-border-radius: $top-left $top-right $bottom-right $bottom-left;
+        -ms-border-radius: $top-left $top-right $bottom-right $bottom-left;
+            border-radius: $top-left $top-right $bottom-right $bottom-left;  
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+      -webkit-box-shadow:inset $top $left $blur $color;
+      -moz-box-shadow:inset $top $left $blur $color;
+      box-shadow:inset $top $left $blur $color;
+    } @else {
+      -webkit-box-shadow: $top $left $blur $color;
+      -moz-box-shadow: $top $left $blur $color;
+      box-shadow: $top $left $blur $color;
+    }
+}
+
+@mixin scroll-bar{
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+      background: #979797;
+      @include border-radius(30px);
+      height: 10%;
+  }
+}
+
+@mixin flex{
+  display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
